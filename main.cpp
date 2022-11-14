@@ -1,6 +1,7 @@
 #include <iostream>
 int main() {
-    int const n=5;
+    int n;
+    std::cin >> n;
     int M[n][n] = {};
     int x = 1;
     for (int c=0; c<n/2; c++){
