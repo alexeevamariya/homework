@@ -74,16 +74,23 @@ double Vector2::operator&(const Vector2 &vector) const {
 }
 
 Vector2 Vector2::getNorm() {
-    return Vector2(x/getLen(),y/getLen());
+    auto len = getLen();
+    return Vector2(x = x/len,y = y/len);
 }
 
 Vector2 Vector2::getPSK() {
-    return Vector2(x=getLen(),y=getPhideg());
+    auto phi = getPhideg();
+    auto r = getLen();
+    return Vector2(y=phi,x=r);
 }
 Vector2 Vector2::ChangeR(double a) {
-    return Vector2(x=a *getLen(),y=getPhideg());
+    auto phi = getPhideg();
+    auto r = getLen();
+    return Vector2(x=a*r,y=phi);
 }
 Vector2 Vector2::ChangePhi(double a) {
-    return Vector2(x=getLen(),y=a*getPhideg());
+    auto phi = getPhideg();
+    auto r = getLen();
+    return Vector2(x=r,y=a*phi);
 }
 
